@@ -7,6 +7,7 @@ import com.hp.hpl.jena.query.*;
 import com.hp.hpl.jena.rdf.model.*;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 import com.hp.hpl.jena.vocabulary.RDF;
+import com.iti.cloud4all.inference.RulesManager;
 import com.iti.cloud4all.instantiation.InstantiationManager;
 import com.iti.cloud4all.prevayler.OntologyModel;
 import com.iti.cloud4all.prevayler.PrevaylerManager;
@@ -176,6 +177,8 @@ public class OntologyManager implements Serializable
     public ArrayList<TempSolutionsToBeLaunched> allInstances_TempSolutionsToBeLaunched;
     public ArrayList<Solution> allInstances_Solution;
     
+    public ArrayList<SolutionToBeLaunched> solutionsToBeLaunched;
+    
     public OntModel model;
     
     private static OntologyManager instance = null;
@@ -324,6 +327,8 @@ public class OntologyManager implements Serializable
         allInstances_TempPossibleSolution = new ArrayList<TempPossibleSolution>();
         allInstances_TempSolutionsToBeLaunched = new ArrayList<TempSolutionsToBeLaunched>();
         allInstances_Solution = new ArrayList<Solution>();
+        
+        solutionsToBeLaunched = new ArrayList<SolutionToBeLaunched>();
         
         // create an empty model
         model = ModelFactory.createOntologyModel();
@@ -673,6 +678,8 @@ public class OntologyManager implements Serializable
         allInstances_TempPossibleSolution.clear();
         allInstances_TempSolutionsToBeLaunched.clear();
         
+        solutionsToBeLaunched.clear();
+        
         ExtendedIterator classes = model.listClasses();
         
         while(classes.hasNext())
@@ -735,14 +742,23 @@ public class OntologyManager implements Serializable
                     else if(tmpClassID == TempSolutionsToBeLaunched_ID)
                     {
                         TempSolutionsToBeLaunched tmpTempSolutionsToBeLaunched = new TempSolutionsToBeLaunched();
-                        String IDsToBeLaunched = "";
+                        //String IDsToBeLaunched = "";
                         StmtIterator it = tmpInstance.listProperties(model.getProperty(InstantiationManager.NS, "TempSolutionsToBeLaunched_IDs"));
+                        //ArrayList<String> tmpAllSolutionsToBeLaunched = new ArrayList<String>();
                         while(it.hasNext())
                         {
                             Statement stmt = it.nextStatement();
-                            IDsToBeLaunched = IDsToBeLaunched + getSolutionIDFromInstanceName(stmt.getObject().toString()) + " ";
+                            
+                            String tmpSolutionInstanceName = stmt.getObject().toString();
+                            String tmpSolutionID = getSolutionIDFromInstanceName(tmpSolutionInstanceName);
+                            String tmpSolutionClassName = getClassFromInstanceName(tmpSolutionInstanceName);
+                            int tmpSolutionIndexInUserPrefs = getIndexInUserPrefs(tmpSolutionID);
+                            
+                            SolutionToBeLaunched tmpSolutionToBeLaunched = new SolutionToBeLaunched(tmpSolutionInstanceName, tmpSolutionID, tmpSolutionClassName, tmpSolutionIndexInUserPrefs);
+                            //PrevaylerManager.getInstance().debug = PrevaylerManager.getInstance().debug + tmpSolutionToBeLaunched.toString();
+                            solutionsToBeLaunched.add(tmpSolutionToBeLaunched);                            
                         }
-                        tmpTempSolutionsToBeLaunched.IDs = IDsToBeLaunched;
+                        tmpTempSolutionsToBeLaunched.IDs = getSolutionsToBeLaunched(RulesManager.GET_FIRST_INSTANCE_BETWEEN_SOLUTIONS_OF_THE_SAME_TYPE);
                         allInstances_TempSolutionsToBeLaunched.add(tmpTempSolutionsToBeLaunched);
                     }
                 }
@@ -786,5 +802,85 @@ public class OntologyManager implements Serializable
             }
         }
         return res;
+    }
+    
+    public String getClassFromInstanceName(String tmpInstanceName)
+    {
+        String res = "";
+        
+        Individual tmpIndividual = model.getIndividual(tmpInstanceName);
+
+        /*for(Iterator i = tmpIndividual.listRDFTypes(true); i.hasNext(); ) 
+        {
+            Resource cls = (Resource) i.next();
+            res = res + cls + " ";
+        }*/
+        res = tmpIndividual.getRDFType(true).toString();
+        
+        //PrevaylerManager.getInstance().debug = PrevaylerManager.getInstance().debug + "\n[" + tmpInstanceName + " IS " + res;
+        
+        return res;
+    }
+    
+    public String getSolutionsToBeLaunched(int mode)
+    {
+        String res = "";
+        ArrayList<SolutionToBeLaunched> finalSolutionsToBeLaunched = new ArrayList<SolutionToBeLaunched>();
+        
+        if(mode == RulesManager.GET_FIRST_INSTANCE_BETWEEN_SOLUTIONS_OF_THE_SAME_TYPE)
+        {
+            for(int i=0; i<solutionsToBeLaunched.size(); i++)   //examine one-by-one all solutions that can be launched
+            {
+                SolutionToBeLaunched tmpSolutionToBeLaunched = solutionsToBeLaunched.get(i);
+                int indexOfExistingSolutionOfTheSameCategoryInFinalArray = aSolutionOfThisCategoryIsIncluded(finalSolutionsToBeLaunched, tmpSolutionToBeLaunched.category);
+                if(indexOfExistingSolutionOfTheSameCategoryInFinalArray == -1)   //there is not any other solution of the same type to be launched, so add it to the ArrayList
+                    finalSolutionsToBeLaunched.add(tmpSolutionToBeLaunched);
+                else    //there is another solution of the same type to be launched
+                {
+                    //check the appearance order in user preferences and
+                    //if current solution appears before the existing one in the array, replace existing with current
+                    int indexOfExistingSolution = finalSolutionsToBeLaunched.get(indexOfExistingSolutionOfTheSameCategoryInFinalArray).indexInUserPrefs;
+                    int indexOfCurrentSolution = tmpSolutionToBeLaunched.indexInUserPrefs;
+                    if(indexOfCurrentSolution < indexOfExistingSolution)
+                        finalSolutionsToBeLaunched.set(indexOfExistingSolutionOfTheSameCategoryInFinalArray, tmpSolutionToBeLaunched);
+                }
+            }
+            for(int i=0; i<finalSolutionsToBeLaunched.size(); i++)
+            {
+                SolutionToBeLaunched tmpSolutionToBeLaunched = finalSolutionsToBeLaunched.get(i);
+                res = res + tmpSolutionToBeLaunched.ID + " ";
+            }
+        }
+        else if(mode == RulesManager.GET_RANDOM_INSTANCE_BEWTWEEN_SOLUTIONS_OF_THE_SAME_TYPE)
+        {
+            //TO BE COMPLETED...
+        }
+        return res;
+    }
+    
+    public int getIndexInUserPrefs(String tmpSolutionID)
+    {
+        int res = -1;
+        
+        String[] tmpSpecificPreferencesForSolutions_Str = InstantiationManager.getInstance().USER_SpecificPreferencesForSolutions_IDs.split(" ");
+        for(int i=0; i<tmpSpecificPreferencesForSolutions_Str.length; i++)
+        {
+            if(tmpSolutionID.equals(tmpSpecificPreferencesForSolutions_Str[i]))
+                return i;//res = i;//
+            //PrevaylerManager.getInstance().debug = PrevaylerManager.getInstance().debug + "\n(" + Integer.toString(i) + ") -> " + tmpSpecificPreferencesForSolutions_Str[i];
+        }
+        
+        return res;
+    }
+    
+    public int aSolutionOfThisCategoryIsIncluded(ArrayList<SolutionToBeLaunched> tmpFinalSolutionsToBeLaunched, String tmpCategory)
+    {
+        for(int i=0; i<tmpFinalSolutionsToBeLaunched.size(); i++)
+        {
+            SolutionToBeLaunched tmpSol = tmpFinalSolutionsToBeLaunched.get(i);
+            if(tmpSol.category.equals(tmpCategory))
+                return i;                
+        }
+        return -1;
     }
 }

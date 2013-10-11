@@ -18,6 +18,9 @@ import java.util.List;
 
 public class RulesManager 
 {
+    public static final int GET_FIRST_INSTANCE_BETWEEN_SOLUTIONS_OF_THE_SAME_TYPE = 0;
+    public static final int GET_RANDOM_INSTANCE_BEWTWEEN_SOLUTIONS_OF_THE_SAME_TYPE = 1;
+    
     public Model m;
     public BufferedReader br;
     

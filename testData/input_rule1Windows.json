@@ -19,16 +19,17 @@
 			}
 		}],
 		
-		"http://registry.gpii.org/applications/nvda.screenReader": [{}],
+		"http://registry.gpii.org/applications/ISO24751.screenReader": [{}],
+		"http://registry.gpii.org/applications/nvda.screenReader": [{}],						
 		"http://registry.gpii.org/applications/org.gnome.orca": [{}],
-		"http://registry.gpii.org/applications/testScreenReader1.screenReader": [{}],
-		"http://registry.gpii.org/applications/testScreenReader2.screenReader": [{}],
-		"http://registry.gpii.org/applications/testScreenReader3.screenReader": [{}],
-		"http://registry.gpii.org/applications/testScreenReader4.screenReader": [{}],
-		"http://registry.gpii.org/applications/testScreenReader5.screenReader": [{}],
-		"http://registry.gpii.org/applications/testMagnifier1.screenMagnifier": [{}],
-		"http://registry.gpii.org/applications/testMagnifier2.screenMagnifier": [{}],
-		"http://registry.gpii.org/applications/testMagnifier3.screenMagnifier": [{}]
+		"http://registry.gpii.org/applications/ISO24751.screenMagnifier": [{}],
+		"http://registry.gpii.org/applications/jaws.screenReader": [{}],
+		"http://registry.gpii.org/applications/satogo.screenReader": [{}],
+		"http://registry.gpii.org/applications/webanywhere.screenReader": [{}],
+		"http://registry.gpii.org/applications/Win7BuiltInNarrator.screenReader": [{}],
+		"http://registry.gpii.org/applications/ZoomText.screenMagnifier": [{}],
+		"http://registry.gpii.org/applications/LinuxBuiltIn.screenMagnifier": [{}],
+		"http://registry.gpii.org/applications/WindowsBuiltIn.screenMagnifier": [{}]		
 	},
     "device": 
 	{
@@ -47,10 +48,13 @@
 				"id": "nvda.screenReader"
 			},
 			{
-				"id": "testMagnifier2.screenMagnifier"
+				"id": "org.gnome.orca"
 			},
 			{
-				"id": "testMagnifier3.screenMagnifier"
+				"id": "ISO24751.screenMagnifier"
+			},
+			{
+				"id": "ZoomText.screenMagnifier"
 			}
         ]
     }
