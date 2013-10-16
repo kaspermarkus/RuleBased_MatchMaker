@@ -1,7 +1,0 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-PREFIX cld: <http://www.cloud4all.eu/SemanticFrameworkForContentAndSolutions.owl#>
-            
-SELECT * 
-WHERE {
-	?q rdf:type cld:TempHandicapSituations ; cld:TH_Magnification ?a ; cld:TH_ScreenReaderAndGnome ?b ; cld:TH_FontSize ?c ; cld:TH_ForegroundAndBackgroundColor ?d ; cld:TH_HighContrast ?e ; cld:TH_MagnifierFullScreen ?f 
-}
