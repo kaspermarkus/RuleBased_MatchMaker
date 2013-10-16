@@ -21,13 +21,8 @@ Matchmaker.
 
     npm install
 	
-Then, build the RuleBasedMatchMaker:
 
-1) Download [Apache Maven](http://maven.apache.org/) and install it
-
-2) In "lib" directory run "mvn clean install"
-
-### Rule-based Matchmaker API
+	### Rule-based Matchmaker API
 
 To run the rule-based matchmaker, simply type:
 
