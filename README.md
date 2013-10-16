@@ -21,8 +21,7 @@ Matchmaker.
 
     npm install
 	
-
-	### Rule-based Matchmaker API
+### Rule-based Matchmaker API
 
 To run the rule-based matchmaker, simply type:
 
