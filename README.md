@@ -49,5 +49,10 @@ Troubleshooting:
 	When executing the Rule-based MatchMaker, a new directory (/logs) is automatically created. 
 	If there are limited permissions, an exception will be thrown.
 	In this case, try to manually create the "logs" directory at the root of the hard drive.
+	
+### Funding Acknowledgement
+
+The research leading to these results has received funding from the European
+Union's Seventh Framework Programme (FP7/2007-2013) under grant agreement No.289016
 
 	
