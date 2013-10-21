@@ -8,7 +8,7 @@
 		"http://registry.gpii.org/common/fontFaceGenericFontFace": [{"value": "sans serif"}],
 		"http://registry.gpii.org/common/magnification": [{"value": 2.0}],
 		"http://registry.gpii.org/common/tracking": [{"value": "mouse"}],
-		"http://registry.gpii.net/common/speechRate": [{"value": 100 }],
+		"http://registry.gpii.net/common/speechRate": [{"value": 42 }],
 		
 		"http://registry.gpii.org/applications/com.microsoft.windows.highContrast": [{
 			"value": {
@@ -18,19 +18,7 @@
 					"value": true
 				}
 			}
-		}],
-		
-		"http://registry.gpii.org/applications/ISO24751.screenReader": [{}],
-		"http://registry.gpii.org/applications/nvda.screenReader": [{}],						
-		"http://registry.gpii.org/applications/org.gnome.orca": [{}],
-		"http://registry.gpii.org/applications/ISO24751.screenMagnifier": [{}],
-		"http://registry.gpii.org/applications/jaws.screenReader": [{}],
-		"http://registry.gpii.org/applications/satogo.screenReader": [{}],
-		"http://registry.gpii.org/applications/webanywhere.screenReader": [{}],
-		"http://registry.gpii.org/applications/Win7BuiltInNarrator.screenReader": [{}],
-		"http://registry.gpii.org/applications/ZoomText.screenMagnifier": [{}],
-		"http://registry.gpii.org/applications/LinuxBuiltIn.screenMagnifier": [{}],
-		"http://registry.gpii.org/applications/WindowsBuiltIn.screenMagnifier": [{}]		
+		}]
 	},
     "device": 
 	{
