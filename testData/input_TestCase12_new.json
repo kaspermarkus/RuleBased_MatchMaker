@@ -31,7 +31,9 @@
 					"value": true
 				}
 			}
-		}]
+		}],
+		
+		"http://registry.gpii.org/applications/nvda.screenReader": [{}]
 	},
     "device": 
 	{
@@ -44,10 +46,7 @@
                 "id": "com.microsoft.windows.magnifier"
             },
 			{
-                "id": "fluid.uiOptions.windows"
-            },
-			{
-				"id": "org.nvda-project"
+				"id": "nvda.screenReader"
 			},
 			{
 				"id": "org.gnome.orca"

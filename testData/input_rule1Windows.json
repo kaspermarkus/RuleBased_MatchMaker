@@ -46,7 +46,7 @@
                 "id": "fluid.uiOptions.windows"
             },
 			{
-				"id": "org.nvda-project"
+				"id": "nvda.screenReader"
 			},
 			{
 				"id": "org.gnome.orca"
