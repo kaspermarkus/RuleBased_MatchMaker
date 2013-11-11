@@ -9,17 +9,19 @@ The Rule-based Matchmaker operates by executing [Kettle](http://wiki.fluidprojec
 ### Dependencies
 
 [universal](https://github.com/GPII/universal)
+[node-rest-client](https://npmjs.org/package/node-rest-client)
 
 Installation instructions
 -
 
 Firstly, install node and npm.
 
-Run the following command in your newly checked out Rule-based Matchmaker
+Run the following commands in your newly checked out Rule-based Matchmaker
 repository. This will install all dependencies that are required by the Rule-based
 Matchmaker.
 
     npm install
+	npm install node-rest-client
 	
 ### Rule-based Matchmaker API
 

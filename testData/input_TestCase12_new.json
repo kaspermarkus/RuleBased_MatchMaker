@@ -31,9 +31,7 @@
 					"value": true
 				}
 			}
-		}],
-		
-		"http://registry.gpii.org/applications/nvda.screenReader": [{}]
+		}]
 	},
     "device": 
 	{
@@ -42,20 +40,11 @@
             "version": "6.1"
         },
         "solutions": [
-            {
-                "id": "com.microsoft.windows.magnifier"
-            },
 			{
 				"id": "nvda.screenReader"
 			},
 			{
-				"id": "org.gnome.orca"
-			},
-			{
-				"id": "ISO24751.screenMagnifier"
-			},
-			{
-				"id": "ZoomText.screenMagnifier"
+				"id": "webinsight.webAnywhere.windows"
 			}
         ]
     }
