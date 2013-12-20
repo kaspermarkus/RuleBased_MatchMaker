@@ -1,14 +1,13 @@
 {
     "typeName": "ruleBasedMatchMaker.production",
+    "options": {
+        "distributeOptions": {
+            "source": "{that}.options.matchMakerGrades",
+            "target": "{that matchMaker}.options.gradeNames"
+        },
+        "matchMakerGrades": ["gpii.matchMaker.ruleBased"]
+    },
     "includes": [
         "../node_modules/universal/gpii/node_modules/matchMaker/configs/production.json"
-    ],
-	"demands": [{
-        "demandingName": "gpii.matchMaker.match",
-        "contextNames": ["gpii.matchMaker", "ruleBasedMatchMaker.production"],
-        "demandSpec": {
-            "funcName": "gpii.matchMaker.ruleBased.match",
-            "args": ["{callbackWrapper}", "{arguments}.0", "{arguments}.1", "{request}.req.body", "{arguments}.2"]
-        }
-    }]
+    ]
 }

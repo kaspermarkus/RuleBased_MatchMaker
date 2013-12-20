@@ -6,8 +6,9 @@
   "bugs": "http://issues.gpii.org/",
   "homepage": "http://gpii.net/",
   "dependencies": {
-        "universal": "git://github.com/GPII/universal.git#a03b5e4512691cad032186434bd3e8151ad23a6d",
-        "when": "~1.8.1"
+        "universal": "git://github.com/GPII/universal.git#5283f4fed1c322683d6450f3b3a68934129c6c07",
+        "when": "~1.8.1",
+        "node-rest-client": "~0.7.5"
   },
   "licenses": [
        {
