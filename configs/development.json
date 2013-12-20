@@ -1,6 +1,7 @@
 {
     "typeName": "ruleBasedMatchMaker.development",
     "options": {
+        "gradeNames": ["autoInit", "fluid.littleComponent"],
         "distributeOptions": {
             "source": "{that}.options.matchMakerGrades",
             "target": "{that matchMaker}.options.gradeNames"
