@@ -6,6 +6,13 @@
             "source": "{that}.options.matchMakerGrades",
             "target": "{that matchMaker}.options.gradeNames"
         },
+        "components": {
+            "server": {
+                "options": {
+                    "port": 8078
+                }
+            }
+        },
         "matchMakerGrades": ["gpii.matchMaker.ruleBased"]
     },
     "includes": [
