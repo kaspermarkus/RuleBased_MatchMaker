@@ -9,7 +9,7 @@
         "components": {
             "server": {
                 "options": {
-                    "port": 8078
+                    "port": 80
                 }
             }
         },
