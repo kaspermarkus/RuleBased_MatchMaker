@@ -42,7 +42,7 @@ The Rule-based Matchmaker currently supports the following urls:
 	
 Usage example using [curl](http://curl.haxx.se/):
 
-	curl -X POST -H "Content-Type: application/json" localhost:8080/match -d @testData\input_rule1Windows.json
+	curl -X POST -H "Content-Type: application/json" localhost:80/match -d @testData\input_Template.json
 
 Troubleshooting:
 
