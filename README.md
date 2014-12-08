@@ -28,10 +28,10 @@ To run the rule-based matchmaker, simply type:
 
     [NODE_ENV={environment}] node bin/ruleBasedMatchMaker
 
-- Default environment is fm.ps.sr.dr.mm.os.lms.multipleMatchMakers.
+- Default environment is "fm.ps.sr.dr.mm.os.lms.multipleMatchMakers".
 
 For example:
-	set NODE_ENV = fm.ps.sr.dr.mm.os.lms.multipleMatchMakers
+	set NODE_ENV=fm.ps.sr.dr.mm.os.lms.multipleMatchMakers
     node bin/ruleBasedMatchMaker
 
 The Rule-based Matchmaker currently supports the following urls:
