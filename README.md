@@ -39,7 +39,7 @@ The Rule-based Matchmaker currently supports the following urls:
 
     {url_to_a_sample_matchmaker_server}/match // POST
 	
-In order to run the Rule-based Matchmaker in conjunction with the GPII framework, please follow the [instructions for setting up the GPII](http://wiki.gpii.net/w/Setting_Up_Your_Development_Environment), ensure that the [Rule-based Matchmaker is used for matchmaking](https://github.com/GPII/universal/blob/master/gpii/node_modules/matchMakerFramework/src/MatchMakerFramework.js#L74) and put the corresponding URL in the [config file](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/testData/universal/gpii/matchMakerFramework/configs/rbmm.cloud.json#L18-L20).  
+In order to run the Rule-based Matchmaker in conjunction with the GPII framework, please follow the [instructions for setting up the GPII](http://wiki.gpii.net/w/Setting_Up_Your_Development_Environment), ensure that the [Rule-based Matchmaker is used for matchmaking](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/testData/universal/gpii/matchMakerFramework/src/MatchMakerFramework.js#L74) and put the corresponding URL in the [config file](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/testData/universal/gpii/matchMakerFramework/configs/rbmm.cloud.json#L18-L20).  
 	
 ### Funding Acknowledgement
 
