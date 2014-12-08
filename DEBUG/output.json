@@ -1,0 +1,36 @@
+{
+  "inferredConfiguration": {
+    "gpii-default": {
+      "applications": {
+        "com.microsoft.windows.magnifier": {
+          "active": "false",
+          "settings": {
+            "http://registry.gpii.net/common/display.screenEnhancement.magnification": "1.5"
+          }
+        },
+        "org.nvda-project": {
+          "active": "false",
+          "settings": {
+            "http://registry.gpii.net/common/display.screenReader.-provisional-screenReaderTTSEnabled": "true"
+          }
+        }
+      }
+    },
+    "nighttime-at-home": {
+      "applications": {
+        "com.microsoft.windows.magnifier": {
+          "active": "false",
+          "settings": {
+            "http://registry.gpii.net/common/display.screenEnhancement.magnification": "2"
+          }
+        },
+        "org.nvda-project": {
+          "active": "false",
+          "settings": {
+            "http://registry.gpii.net/common/display.screenReader.-provisional-screenReaderTTSEnabled": "true"
+          }
+        }
+      }
+    }
+  }
+}

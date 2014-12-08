@@ -1,0 +1,20 @@
+{
+    "typeName": "ruleBasedMatchMaker.development",
+    "options": {
+        "gradeNames": ["autoInit", "fluid.littleComponent"],
+        "components": {
+            "server": {
+                "type": "kettle.server",
+                "options": {
+                    "logging": true,
+                    "port": 8078,
+					"components": {
+						"ruleBasedMatchMaker": {
+							"type": "gpii.ruleBasedMatchMaker"
+						}
+					}
+                }
+            }
+        }
+    }
+}

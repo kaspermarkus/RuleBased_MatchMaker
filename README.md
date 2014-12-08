@@ -20,35 +20,25 @@ repository. This will install all dependencies that are required by the Rule-bas
 Matchmaker.
 
     npm install
+	grunt dedupe-infusion
 	
 ### Rule-based Matchmaker API
 
 To run the rule-based matchmaker, simply type:
 
-    [NODE_ENV={environment}] bin/ruleBasedMatchMaker [path/to/ruleBasedMatchMaker/configs/folder]
+    [NODE_ENV={environment}] node bin/ruleBasedMatchMaker
 
-- Default environment is development.
-- Path to configs folder can be absolute or relative to the current user directory.
+- Default environment is fm.ps.sr.dr.mm.os.lms.multipleMatchMakers.
 
 For example:
-
-    bin/ruleBasedMatchMaker
-    bin/ruleBasedMatchMaker /Users/{userName}/ruleBasedMatchMaker/configs/
-    NODE_ENV=production bin/ruleBasedMatchMaker configs/
+	set NODE_ENV = fm.ps.sr.dr.mm.os.lms.multipleMatchMakers
+    node bin/ruleBasedMatchMaker
 
 The Rule-based Matchmaker currently supports the following urls:
 
     {url_to_a_sample_matchmaker_server}/match // POST
 	
-Usage example using [curl](http://curl.haxx.se/):
-
-	curl -X POST -H "Content-Type: application/json" localhost:80/match -d @testData\input_Template.json
-
-Troubleshooting:
-
-	When executing the Rule-based MatchMaker, a new directory (/logs) is automatically created. 
-	If there are limited permissions, an exception will be thrown.
-	In this case, try to manually create the "logs" directory at the root of the hard drive.
+In order to run the Rule-based Matchmaker in conjunction with the GPII framework, please follow the [instructions for setting up the GPII](http://wiki.gpii.net/w/Setting_Up_Your_Development_Environment), ensure that the [Rule-based Matchmaker is used for matchmaking](https://github.com/GPII/universal/blob/master/gpii/node_modules/matchMakerFramework/src/MatchMakerFramework.js#L74) and put the corresponding URL in the config file.  
 	
 ### Funding Acknowledgement
 
