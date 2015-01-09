@@ -49,7 +49,7 @@ However, if you want to deploy the "Maven RESTful part" in your own [Apache Tomc
 
 1) Follow the instructions included [here](https://github.com/NickKaklanis/RuleBasedMatchMaker_RESTful_WS_Maven/tree/review3) for building and deploying the "Maven RESTful part"
 
-2) Put [here](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/lib/RuleBasedMatchMaker.js#L34) the IP & Port of the [Apache Tomcat server](http://tomcat.apache.org/) where you deployed the "Maven RESTful part" of the RBMM
+2) Put in [lib/RuleBasedMatchMaker.js](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/lib/RuleBasedMatchMaker.js#L34) the IP & Port of the [Apache Tomcat server](http://tomcat.apache.org/) where you deployed the "Maven RESTful part" of the RBMM
 	
 ### Funding Acknowledgement
 
