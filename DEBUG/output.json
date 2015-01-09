@@ -2,35 +2,77 @@
   "inferredConfiguration": {
     "gpii-default": {
       "applications": {
-        "com.microsoft.windows.magnifier": {
-          "active": "false",
-          "settings": {
-            "http://registry.gpii.net/common/display.screenEnhancement.magnification": "1.5"
-          }
-        },
         "org.nvda-project": {
-          "active": "false",
+          "active": true,
           "settings": {
-            "http://registry.gpii.net/common/display.screenReader.-provisional-screenReaderTTSEnabled": "true"
+            "http://registry.gpii.net/common/screenReaderTTSEnabled": true,
+            "http://registry.gpii.net/common/speechRate": 300
           }
         }
-      }
+      },
+      "metadata": [
+        {
+          "message": {
+            "de": {
+              "learnMore": "todo Sollution URI",
+              "message": "Deine bevorzugte assistive Technology ist auf diesem Gerät nicht verfügbar. Wir habe diese alternaive Lösung für dich gestartet."
+            },
+            "en": {
+              "learnMore": "todo Sollution URI",
+              "message": "Your preferred Assistive Technology is not available on the device. We have launched this alternative solution for you."
+            },
+            "gr": {
+              "learnMore": "todo Sollution URI",
+              "message": "Bla Bla Bla in Greek."
+            }
+          },
+          "scope": [
+            "org.nvda-project"
+          ],
+          "type": "helpMessage"
+        }
+      ]
     },
-    "nighttime-at-home": {
+    "noise": {
       "applications": {
-        "com.microsoft.windows.magnifier": {
-          "active": "false",
-          "settings": {
-            "http://registry.gpii.net/common/display.screenEnhancement.magnification": "2"
-          }
-        },
         "org.nvda-project": {
-          "active": "false",
+          "active": true,
           "settings": {
-            "http://registry.gpii.net/common/display.screenReader.-provisional-screenReaderTTSEnabled": "true"
+            "http://registry.gpii.net/common/screenReaderTTSEnabled": true,
+            "http://registry.gpii.net/common/speechRate": 300
           }
         }
-      }
+      },
+      "conditions": [
+        {
+          "inputPath": "http://registry.gpii.net/conditions/noise",
+          "max": "6:00",
+          "min": "18:00",
+          "type": "http://gpii.net/common/operators/inRange"
+        }
+      ],
+      "metadata": [
+        {
+          "message": {
+            "de": {
+              "learnMore": "todo Sollution URI",
+              "message": "Deine bevorzugte assistive Technology ist auf diesem Gerät nicht verfügbar. Wir habe diese alternaive Lösung für dich gestartet."
+            },
+            "en": {
+              "learnMore": "todo Sollution URI",
+              "message": "Your preferred Assistive Technology is not available on the device. We have launched this alternative solution for you."
+            },
+            "gr": {
+              "learnMore": "todo Sollution URI",
+              "message": "Bla Bla Bla in Greek."
+            }
+          },
+          "scope": [
+            "org.nvda-project"
+          ],
+          "type": "helpMessage"
+        }
+      ]
     }
   }
 }

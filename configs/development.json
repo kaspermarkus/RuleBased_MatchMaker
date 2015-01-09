@@ -2,20 +2,19 @@
     "typeName": "ruleBasedMatchMaker.development",
     "options": {
         "gradeNames": ["autoInit", "fluid.littleComponent"],
-        "distributeOptions": {
-            "source": "{that}.options.matchMakerGrades",
-            "target": "{that matchMaker}.options.gradeNames"
-        },
         "components": {
             "server": {
+                "type": "kettle.server",
                 "options": {
-                    "port": 8078
+                    "logging": true,
+                    "port": 8078,
+					"components": {
+						"ruleBasedMatchMaker": {
+							"type": "gpii.ruleBasedMatchMaker"
+						}
+					}
                 }
             }
-        },
-        "matchMakerGrades": ["gpii.matchMaker.ruleBased"]
-    },
-    "includes": [
-        "../node_modules/universal/gpii/node_modules/matchMaker/configs/development.json"
-    ]
+        }
+    }
 }
