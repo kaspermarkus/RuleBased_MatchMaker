@@ -43,7 +43,7 @@ In order to run the Rule-based Matchmaker in conjunction with the GPII framework
 
 ### Make it work with the [Rule-based RESTful web-service](https://github.com/NickKaklanis/RuleBasedMatchMaker_RESTful_WS_Maven/tree/review3) that you deployed in your own [Apache Tomcat server](http://tomcat.apache.org/)
 
-The current project is the "Node.js part" of the Rule-based Matchmaker(RBMM) that uses internally the ["Maven RESTful part" of the RBMM](https://github.com/NickKaklanis/RuleBasedMatchMaker_RESTful_WS_Maven/tree/review3).
+The current project is the "Node.js part" of the Rule-based Matchmaker (RBMM) that uses internally the ["Maven RESTful part" of the RBMM](https://github.com/NickKaklanis/RuleBasedMatchMaker_RESTful_WS_Maven/tree/review3).
 The "Maven RESTful part" of the RBMM is already deployed at http://160.40.50.183:8080.
 However, if you want to deploy the "Maven RESTful part" in your own [Apache Tomcat server](http://tomcat.apache.org/), please follow the steps below:
 1) Follow the instructions included [here](https://github.com/NickKaklanis/RuleBasedMatchMaker_RESTful_WS_Maven/tree/review3) for building and deploying the "Maven RESTful part"
