@@ -39,6 +39,18 @@ The Rule-based Matchmaker currently supports the following urls:
 
     {url_to_a_sample_matchmaker_server}/match // POST
 	
+### Testing
+
+Usage example using [curl](http://curl.haxx.se/):
+
+	curl -X POST -H "Content-Type: application/json" localhost:8078/match -d @testData\universal\testData\preferences\vladimir.json
+	
+After running the command above, the output of the Rule-based Matchmaker will be shown in the console and it will be also stored at [DEBUG\output.json](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/DEBUG/output.json). 
+
+If [DEBUG\output.json](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/DEBUG/output.json) is equal with the expected result: [DEBUG\expectedTestOutcomes\vladimirOUT.json](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/DEBUG/expectedTestOutcomes/vladimirOUT.json), then the Rule-based Matchmaker is running properly.
+
+## Running the Rule-based Matchmaker in conjunction with GPII
+	
 In order to run the Rule-based Matchmaker in conjunction with the GPII framework, please follow the [instructions for setting up the GPII](http://wiki.gpii.net/w/Setting_Up_Your_Development_Environment), ensure that the [Rule-based Matchmaker is used for matchmaking](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/testData/universal/gpii/matchMakerFramework/src/MatchMakerFramework.js#L74) and put the corresponding URL in the [config file](https://github.com/NickKaklanis/RuleBased_MatchMaker/blob/master/testData/universal/gpii/matchMakerFramework/configs/rbmm.cloud.json#L18-L20). 
 
 ### Make it work with the [Rule-based RESTful web-service](https://github.com/NickKaklanis/RuleBasedMatchMaker_RESTful_WS_Maven/tree/review3) that you deployed in your own [Apache Tomcat server](http://tomcat.apache.org/)
